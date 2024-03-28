@@ -1,4 +1,4 @@
-package sorting
+package selection
 
 func findSmallest(arr []int) int {
 	smallest := arr[0]
@@ -12,10 +12,11 @@ func findSmallest(arr []int) int {
 	return smallestIndex
 }
 
-func selectionSort(arr []int) []int {
-	newArr := []int{}
+func Sort(arr []int) []int {
+	maxArr := len(arr)
+	var newArr []int
 
-	for i := 0; i < len(arr); i++ {
+	for i := 0; i < maxArr; i++ {
 		smallest := findSmallest(arr)
 		newArr = append(newArr, arr[smallest])
 		arr = append(arr[:smallest], arr[smallest+1:]...)
